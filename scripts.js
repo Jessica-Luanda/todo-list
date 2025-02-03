@@ -3,12 +3,13 @@ const input = document.querySelector('.input-task');
 const listaCompleta = document.querySelector('.list-task');
 
 let minhaListaDeItens = []
+const pError =  document.querySelector('.error-message')
 
 /*Trazer o valor que está dentro do input*/
 function adicionarNovaTarefa() {
 
     if (input.value.trim() === '') {
-        alert("Por favor, insira uma tarefa antes do adicionar!");
+        mostrarErro("Por favor, insira uma tarefa antes do adicionar!")
         return // Retorna para evitar adicionar uma tarefa vazia
     }
 
@@ -18,6 +19,7 @@ function adicionarNovaTarefa() {
         concluida: false
     });
     input.value = '';  // Limpar campo de entrada
+    pError.textContent = ''
     mostrarTarefas() //atualiza a exibição das tarefas da lista
 }
 
@@ -79,3 +81,11 @@ function recarregarTarefas() {
 }
 recarregarTarefas()
 button.addEventListener('click', adicionarNovaTarefa);
+
+function mostrarErro(mensagem){
+   
+   pError.textContent = mensagem
+   pError.classList.add('animation-shake')
+
+
+}

@@ -22,6 +22,11 @@ body {
 
 }
 
+.input-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
 .containerTitulo{
 
     width: 500px;
@@ -54,6 +59,13 @@ body {
     float: right;
     cursor: pointer;
 
+}
+
+.error-message{
+    color: crimson;
+    font-size: 12px;
+    margin: 10px 0;
+    
 }
 
 .button-task:hover {
@@ -108,4 +120,31 @@ img {
     background-color: rgb(8, 4, 65);
     text-decoration: line-through;
     color: #f2f2f2;
+}
+
+
+.animation-shake{
+    animation: shake .3s ease-in-out ;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
